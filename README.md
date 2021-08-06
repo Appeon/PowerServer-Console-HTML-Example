@@ -63,7 +63,7 @@ If you want to monitor one of your own PowerServer API Servers, please refer to 
 
 2. Add the following code in the      ConfigureServices method.
 
-   1. // Adds cross-origin resource sharing services
+   // Adds cross-origin resource sharing services
 
    ```c#
    services.AddCors(x=>
