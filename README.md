@@ -51,3 +51,43 @@ Before running this VUE project, make sure a PowerServer API project is running 
   npm run dev
   ```
 7. Browse the http://localhost:8080 by default. You may modify the access host and port in config/index.js.
+8. The default API Server URL is https://psdemo.appeon.com:9001/api.sales. If you want to monitor your own API Server, you can update the URL in settings > API Server URL.
+
+##### How to allow Server Management Console to access your own PowerServer API Server
+
+Normally, this Server Management Console is not under the same domain with your PowerServer API Server. By default, the browser will not allow cross-origin resource sharing (CORS).
+
+If you want to monitor one of your own PowerServer API Servers, please refer to the following steps to modify your code. 
+
+1. Open the StartUp.cs file in your PowerServer API Server project.
+
+2. Add the following code in the      ConfigureServices method.
+
+   1. // Adds cross-origin resource sharing services
+
+   ```c#
+   services.AddCors(x=>
+               {
+                   x.AddPolicy("limitRequest", policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+               });
+   ```
+
+3. Add the following code in the Configure method.
+
+   ```c#
+   //Note: put the following code after app.UseRouting() and before app.UseAuthentication().
+   // Adds a CORS middleware to your web application pipeline to allow cross domain requests.
+   app.UseCors("limitRequest"); 
+   ```
+
+4. Build and deploy your PowerServer API Server.
+
+5. Enter your own PowerServer API Server URL in Server Management Console > Settings > API Server URL > API Host and click Update.
+
+6. You can then monitor and manage      your PowerServer API Server using this console.
+
