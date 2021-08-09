@@ -67,14 +67,14 @@ If you want to monitor one of your own PowerServer API Servers, please refer to 
    ```c#
    // Adds cross-origin resource sharing services
    services.AddCors(x=>
-               {
-                   x.AddPolicy("limitRequest", policy =>
-                    {
-                        policy.AllowAnyOrigin()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                    });
-               });
+            {
+                x.AddPolicy("limitRequest", policy =>
+                 {
+                     policy.WithOrigins(new string[] { "https://dsdemo.appeon.com" })	//Specify which domain is allowed to access your PowerServer API server. Here we use our online demo site as an example.
+                     .AllowAnyHeader()
+                     .AllowAnyMethod();
+                 });
+            });
    ```
 
 3. Add the following code in the Configure method.
