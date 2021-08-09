@@ -16,10 +16,10 @@ The project is structured as follows.
 
 ```
 |—— PowerServer-Console-HTML-Example Repository 
-	|—— PowerServer Console    			    		Project implemented with Vue
+	|—— PowerServer Console    			    			Project implemented with Vue
 	    	|—— build							Includes the build files
 	    	|—— config							Defines the runtime environment config files
-	    	|—— src							Includes the vue pages
+	    	|—— src								Includes the vue pages
 			|-- api							Defines the JavaScript file of request server api 
 			|-- assets						Includes the images and css files
 			|-- components						Includes the common components
