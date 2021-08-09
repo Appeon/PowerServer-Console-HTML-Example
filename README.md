@@ -15,16 +15,16 @@ The project contains a VUE project. It is implemented using vue.js.
 The project is structured as follows.
 
 ```
-|—— PowerServer Console    			    Project implemented with Vue
-	|—— build							Includes the build files
-	|—— config							Defines the runtime environment config files
-	|—— src								Includes the vue pages
-    	|-- api							Defines the JavaScript file of request server api 
-    	|-- assets						Includes the images and css files
-    	|-- components					Includes the common components
-    	|-- pages						Includes the Vue pages
-    	|-- router						Defines the page url
-    	|-- utils						Includes the common JavaScript file
+|—— PowerServer Console    			    		Project implemented with Vue
+    |—— build							Includes the build files
+    |—— config							Defines the runtime environment config files
+    |—— src							Includes the vue pages
+	|-- api							Defines the JavaScript file of request server api 
+	|-- assets						Includes the images and css files
+	|-- components						Includes the common components
+	|-- pages						Includes the Vue pages
+	|-- router						Defines the page url
+	|-- utils						Includes the common JavaScript file
     |—— static							Includes the static resource
 ```
 
