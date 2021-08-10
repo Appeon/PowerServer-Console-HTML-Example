@@ -70,8 +70,8 @@ If you want to monitor one of your own PowerServer API Servers, please refer to 
             {
                 x.AddPolicy("limitRequest", policy =>
                  {
-			  //Specify the Server Management Console's domain to access your PowerServer API server. 
-			  //Here we use the domain of the Server Management Console (https://dsdemo.appeon.com/psconsolehtml) of our online demo site as an example.
+			  // Specify the Server Management Console's domain to access your PowerServer API server. 
+			  // Here we use the domain of the Server Management Console (https://dsdemo.appeon.com/psconsolehtml) of our online demo site as an example.
                      policy.WithOrigins(new string[] { "https://dsdemo.appeon.com" })	
                      .AllowAnyHeader()
                      .AllowAnyMethod();
@@ -82,7 +82,7 @@ If you want to monitor one of your own PowerServer API Servers, please refer to 
 3. Add the following code in the Configure method.
 
    ```c#
-   //Note: put the following code after app.UseRouting() and before app.UseAuthentication().
+   // Note: put the following code after app.UseRouting() and before app.UseAuthentication().
    // Adds a CORS middleware to your web application pipeline to allow cross domain requests.
    app.UseCors("limitRequest"); 
    ```
