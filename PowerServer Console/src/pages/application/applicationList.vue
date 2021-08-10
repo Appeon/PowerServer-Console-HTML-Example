@@ -43,8 +43,8 @@
       </tao-table>
     </el-row>
 
-    <el-dialog :title="dialogTitle" :rules="rules" width="800px" :visible.sync="dialogFormVisible">
-      <el-form ref="dataForm" :model="form" label-width="145px">
+    <el-dialog :title="dialogTitle" :rules="rules" width="700px" :visible.sync="dialogFormVisible">
+      <el-form ref="dataForm" :model="form" label-width="210px">
         <el-form-item label="Application name">
           <el-input v-model="form.applicationname" ></el-input>
         </el-form-item>
@@ -53,15 +53,16 @@
           <el-input v-model="form.cachename" :disabled="true"></el-input>
         </el-form-item>
 
-        <el-form-item label="Session Timeout">
-          <el-input onkeyup="value=value.replace(/[^\d.]/g,'')" v-model="form.configuration.session.timeout" ></el-input>
+        <el-form-item label="Session Timeout (seconds)">
+          <!-- <el-input onkeyup="value=value.replace(/[^\d]/g,'')" v-model="form.configuration.session.timeout" ></el-input> -->
+          <el-input v-model="form.configuration.session.timeout" ></el-input>
         </el-form-item>
 
-        <el-form-item label="Request Timeout">
+        <el-form-item label="Request Timeout (seconds)">
           <el-input v-model="form.configuration.request.timeout" ></el-input>
         </el-form-item>
 
-        <el-form-item label="Transaction Timeout">
+        <el-form-item label="Transaction Timeout (seconds)">
           <el-input v-model="form.configuration.transaction.timeout" ></el-input>
         </el-form-item>
 

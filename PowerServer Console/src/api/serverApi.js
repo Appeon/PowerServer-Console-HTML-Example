@@ -54,7 +54,7 @@ export function getHealthTotalInfo() {
        data: ''
      })
      ]).then(res=> {
-       alert(res)
+       // alert(res)
        return {code:0, data:{health:res[0],readiness:res[1],liveness:res[2]}}
   })
 }
@@ -185,7 +185,7 @@ export function getApplicationList() {
   })
 }
 export function updateApplication(formData){
-  alert(JSON.stringify(formData))
+  // alert(JSON.stringify(formData))
   return axios.post({
     url: '/api/application/edit',
     data: formData

@@ -48,27 +48,27 @@
       	</tao-table>
     </el-row>
 
-    <el-dialog :title="dialogTitle" :rules="rules" width="800px" :visible.sync="dialogFormVisible">
-      <el-form ref="dataForm" :model="form" label-width="145px">
+    <el-dialog :title="dialogTitle" :rules="rules" width="900px" :visible.sync="dialogFormVisible">
+      <el-form ref="dataForm" :model="form" label-width="220px">
         <el-row :gutter="20">
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Cache Group" prop="cachegroup">
-              <el-input v-model="form.cachegroup" :disabled="this.dialogStatus=='create'?false:true"></el-input>
+              <el-input v-model="form.cachegroup"  :disabled="this.dialogStatus=='create'?false:true"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Cache Name" prop="cachename">
               <el-input v-model="form.cachename" :disabled="this.dialogStatus=='create'?false:true"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row :gutter="20">
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Host" >
               <el-input v-model="form.configuration.host"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Port">
               <el-input v-model="form.configuration.port"></el-input>
             </el-form-item>
@@ -76,22 +76,22 @@
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Database">
               <el-input v-model="form.configuration.database"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="11">
           </el-col>
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="User Id">
               <el-input v-model="form.configuration.userid"></el-input>
             </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <el-col :span="11">
             <el-form-item label="Password">
               <el-input type="password" v-model="form.configuration.password"></el-input>
             </el-form-item>
@@ -99,51 +99,38 @@
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="Command Timeout">
+          <el-col :span="11">
+            <el-form-item label="Command Timeout (seconds)">
               <el-input v-model="form.configuration.commandtimeout"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
-            <el-form-item label="Connection Timeout">
+          <el-col :span="11">
+            <el-form-item label="Connection Timeout (seconds)">
               <el-input v-model="form.configuration.connectiontimeout"></el-input>
             </el-form-item>
         </el-col>
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="Min Pool Size">
+          <el-col :span="11">
+            <el-form-item label="Min Connection Pool Size">
               <el-input v-model="form.configuration.minpoolsize"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
-            <el-form-item label="Max Pool Size">
+          <el-col :span="11">
+            <el-form-item label="Max Connection Pool Size">
               <el-input v-model="form.configuration.maxpoolsize"></el-input>
             </el-form-item>
         </el-col>
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="Min Pool Size">
-              <el-input v-model="form.configuration.minpoolsize"></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="12">
-            <el-form-item label="Max Pool Size">
-              <el-input v-model="form.configuration.maxpoolsize"></el-input>
-            </el-form-item>
-        </el-col>
-        </el-row>
-
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="Connection Lifetime">
+          <el-col :span="11">
+            <el-form-item label="Connection Lifetime (seconds)">
               <el-input v-model="form.configuration.connectionlifetime"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="11">
             <el-form-item label="Other Options">
               <el-input v-model="form.configuration.otheroptions"></el-input>
             </el-form-item>
@@ -151,16 +138,16 @@
         </el-row>
 
         <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="Enable Pooling">
+          <el-col :span="11">
+            <el-form-item label="Enable Connection Pooling">
               <el-radio-group v-model="form.configuration.enablepooling">
                 <el-radio :label="true"></el-radio>
                 <el-radio :label="false"></el-radio>
               </el-radio-group>
             </el-form-item>
           </el-col>
-          <el-col :span="12">
-            <el-form-item label="Dynamic Connection">
+          <el-col :span="11">
+            <el-form-item label="Enable Dynamic Connection">
               <el-radio-group v-model="form.configuration.dynamicconnection">
                 <el-radio :label="true"></el-radio>
                 <el-radio :label="false"></el-radio>

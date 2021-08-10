@@ -1,5 +1,20 @@
 const menuData = [
 
+{
+    id: 0,
+    title: "Dashboard",
+    title_en: "Dashboard",
+    icon: "\ue661",
+    path: "/dashboard/console",
+    children: [
+          // {
+          //   id: 101,
+          //   title: "Dashboard",
+          //   title_en: "PowerServer Console",
+          //   path: "/dashboard/console"
+          // }
+        ]
+  },
   {
     id: 1,
     title: "Monitor Center",

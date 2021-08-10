@@ -9,13 +9,12 @@
         <submenu :list="item.children" :isMobile="isMobile" @close="closeMenu"/>
       </el-submenu>
 
-      <el-menu-item v-if="!isNotEmpty(item.children) && !item.noMenu" 
-        :index="item.path || item.title" 
-        @click="goPage(item)"
-      >
+      <el-menu-item v-if="!isNotEmpty(item.children) && !item.noMenu"
+        :index="item.path || item.title"
+        @click="goPage(item)" >
         <template slot="title">
-          <i class="iconfont" v-if="item.icon">{{item.icon}}</i>
-          <span>{{switchLanguage(item.title, item.title_en)}}</span>
+          <i class="iconfont" v-if="item.icon" style="margin-left:5px">{{item.icon}}</i>
+          <span style="margin-left:10px">{{switchLanguage(item.title, item.title_en)}}</span>
         </template>
       </el-menu-item>
     </div>
